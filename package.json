@@ -5,6 +5,7 @@
   "scripts": {
     "build": "babel src --out-dir dist --source-maps=\"inline\"",
     "build:static": "rimraf dist && npm run build",
+    "watch:static": "nodemon --exec npm run build:static --config \"nodemon_src.json\"",
     "dev": "nodemon --exec npm run restart",
     "start": "node dist/index.js",
     "restart": "rimraf dist && npm run build && npm start"
@@ -27,6 +28,7 @@
     "babel-eslint": "^11.0.0-beta.2",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-register": "^6.26.0",
+    "nodemon": "^2.0.4",
     "rimraf": "^3.0.2"
   }
 }
